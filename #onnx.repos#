@@ -1,4 +1,4 @@
-repositories:
+qrepositories:
   cv_camera:
     type: git
     url: https://github.com/Kapernikov/cv_camera.git
