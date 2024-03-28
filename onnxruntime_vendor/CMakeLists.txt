@@ -7,17 +7,13 @@ project(onnxruntime_vendor)
 find_package(ament_cmake REQUIRED)
 
 # disable Cuda build on github ci
-if(DEFINED ENV{GITHUB_WORKSPACE})
-    message("Detected Github CI, building without CUDA")
-    option(CUDA_SUPPORT "use CUDA support onnxruntime library" OFF)
-else()
-    option(CUDA_SUPPORT "use CUDA support onnxruntime library" ON)
-endif()
+
+option(CUDA_SUPPORT "use CUDA support onnxruntime library" OFF)
 
 if(CUDA_SUPPORT)
     message("Building with Cuda support")
     set(PACKAGE_URL "https://www.nuget.org/api/v2/package/Microsoft.ML.OnnxRuntime.Gpu/1.17.0")
-    set(PACKAGE_SHA512 "c9c2ba5c594c92c1e426e9c53f9909e8851a41c99f48f8a369e082f8047d521b236f2fbb943e73975cbb45bd9957f20139c25959e50e1679dca9eeac08f73b31")
+    set(PACKAGE_SHA512 "3d0d042bad767e920a717d994732daa748e2273ac10834f5d85297eaec198dfe07c3effef439fa2935d33926b990a502de7869c49bb8de52177c4cfdf01d1c35")
 else()
     message("Building without Cuda support")
     set(PACKAGE_URL "https://www.nuget.org/api/v2/package/Microsoft.ML.OnnxRuntime/1.17.0")
