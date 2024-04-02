@@ -59,7 +59,7 @@ install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/onnxruntime/runtimes/linux-x64/native/libonnxruntime.so
     DESTINATION lib
-    RENAME libonnxruntime.so.1.4.0
+    RENAME libonnxruntime.so.1.17.0
 )
 endif()
 
